@@ -1,39 +1,55 @@
 package com.wordpress.actualizateya.randomdominionstarwars;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 
 
 public class SplahActivity extends ActionBarActivity {
 
+    private static String TAG = SplahActivity.class.getName();
+    private static long SLEEP_TIME = 4;    // Sleep for some time
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Hidden the action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         setContentView(R.layout.activity_splah);
-    }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_splah, menu);
-        return true;
+        // Start timer and launch main activity
+        IntentLauncher launcher = new IntentLauncher();
+        launcher.start();
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onBackPressed() {
+        // do something on back.
+        return;
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    private class IntentLauncher extends Thread {
+        @Override
+        /**
+         * Sleep for some time and than start new activity.
+         */
+        public void run() {
+            try {
+                // Sleeping
+                Thread.sleep(SLEEP_TIME*1000);
+            } catch (Exception e) {
+                Log.e(TAG, e.getMessage());
+            }
+
+            // Start main activity
+            Intent intent = new Intent(SplahActivity.this, PrincipalActivity.class);
+            SplahActivity.this.startActivity(intent);
+            SplahActivity.this.finish();
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
 }
