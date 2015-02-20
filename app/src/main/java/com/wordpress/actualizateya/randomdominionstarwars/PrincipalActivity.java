@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.Button;
-
 import android.widget.ListView;
 
+import com.wordpress.actualizateya.randomdominionstarwars.Tags.InteractiveArrayAdapter;
+import com.wordpress.actualizateya.randomdominionstarwars.Tags.Model;
 
 import java.util.ArrayList;
 
@@ -21,6 +21,8 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
     InteractiveArrayAdapter plAdapter;
     String[] an;
     Button btnAllList;
+    Button btnTagList;
+    Button btnRandomList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,10 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
         //Inicializar botones y darles accion
         btnAllList = (Button) findViewById(R.id.buttonAllList);
         btnAllList.setOnClickListener(this);
+        btnTagList = (Button) findViewById(R.id.buttonTagList);
+        btnTagList.setOnClickListener(this);
+        btnRandomList = (Button) findViewById(R.id.buttonRandomList);
+        btnRandomList.setOnClickListener(this);
 
     }
 
@@ -74,15 +80,22 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
 
         //Marcar la primera de basico
         tagtList.get(0).setSelected(true);
-
         return tagtList;
     }
 
     @Override
     public void onClick(View v) {
+        Integer id = v.getId();
+        if (id == btnAllList.getId()) {
+
+        }else if (id == btnTagList.getId()) {
+
+        }else if (id == btnRandomList.getId()) {
+
+        }
+
         // Start main activity
         Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
         PrincipalActivity.this.startActivity(intent);
-
     }
 }

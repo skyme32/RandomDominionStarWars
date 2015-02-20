@@ -20,7 +20,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="@string/button_tagList"
         android:id="@+id/buttonTagList"
         android:layout_below="@+id/buttonAllList"
         android:layout_centerHorizontal="true" />
@@ -28,7 +28,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="@string/button_randomList"
         android:id="@+id/buttonRandomList"
         android:layout_below="@+id/buttonTagList"
         android:layout_centerHorizontal="true" />

@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Random Dominion</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_principal">Random Dominion</string>
     <string name="title_activity_list">ListActivity</string>
-    <string name="button_allList">Todas las cartas</string>
+    <string name="button_allList">Mostrar todas las cartas</string>
+    <string name="button_tagList">Mostrar las cartas por categorias</string>
+    <string name="button_randomList">Mostrar las cartas para jugar</string>
 
 </resources>

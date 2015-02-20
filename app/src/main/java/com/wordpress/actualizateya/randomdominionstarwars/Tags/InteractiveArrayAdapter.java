@@ -1,4 +1,4 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Tags;
 
 /**
  * Created by skyme on 20/02/15.
@@ -13,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 public class InteractiveArrayAdapter extends ArrayAdapter<Model> {
 

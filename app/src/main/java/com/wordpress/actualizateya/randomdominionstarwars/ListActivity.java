@@ -1,9 +1,12 @@
 package com.wordpress.actualizateya.randomdominionstarwars;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 
 public class ListActivity extends ActionBarActivity {
@@ -11,6 +14,8 @@ public class ListActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_list);
     }
 

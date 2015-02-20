@@ -1,4 +1,4 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Tags;
 
 /**
  * Created by skyme on 20/02/15.
