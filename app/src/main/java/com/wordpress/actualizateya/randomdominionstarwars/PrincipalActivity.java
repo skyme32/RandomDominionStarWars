@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.InteractiveArrayAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.Model;
@@ -17,8 +18,12 @@ import java.util.ArrayList;
 
 public class PrincipalActivity extends ActionBarActivity implements View.OnClickListener {
 
+    //Constants
+
+    //Varibles
     ListView lv;
     InteractiveArrayAdapter plAdapter;
+    ArrayList<Model> tagList;
     String[] an;
     Button btnAllList;
     Button btnTagList;
@@ -69,33 +74,66 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
 
     private ArrayList<Model> displayPlanetList() {
 
-        ArrayList<Model> tagtList = new ArrayList<Model>();
+        tagList = new ArrayList<Model>();
         an = getResources().getStringArray(R.array.tags);
 
         //Recorrer la lista de array y añadirla al a una arraylist
         for (int y = 0; y < an.length; y++) {
-            System.out.printf(an[y]);
-            tagtList.add(new Model(an[y]));
+            tagList.add(new Model(an[y]));
         }
 
         //Marcar la primera de basico
-        tagtList.get(0).setSelected(true);
-        return tagtList;
+        tagList.get(0).setSelected(true);
+        return tagList;
     }
 
     @Override
     public void onClick(View v) {
         Integer id = v.getId();
+        Integer mark = 0;
+        ArrayList<String> tags = new ArrayList();
+
         if (id == btnAllList.getId()) {
+            mark = 1;
+            tags = ArrayTags(mark);
 
-        }else if (id == btnTagList.getId()) {
+        } else if (id == btnTagList.getId()) {
+            tags = ArrayTags(mark);
 
-        }else if (id == btnRandomList.getId()) {
+        } else if (id == btnRandomList.getId()) {
+            tags = ArrayTags(mark);
 
         }
 
+
         // Start main activity
         Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
+        intent.putExtra("tags", tags);
         PrincipalActivity.this.startActivity(intent);
     }
+
+    //Array para mirar que tags ponemos y cules no
+    public ArrayList<String> ArrayTags(Integer mark) {
+        ArrayList<String> tags = new ArrayList();
+
+        //Recorrer la lista de array y añadirla al a una arraylist
+        for (int i = 0; i < tagList.size(); i++) {
+
+            if (mark == 1) {
+                tags.add(tagList.get(i).getName());
+            }else{
+                if (tagList.get(i).isSelected()) {
+                    tags.add(tagList.get(i).getName());
+                }
+            }
+        }
+
+
+        if (tags.size() == 0) {
+            Toast.makeText(getApplication(), R.string.error_expansion, Toast.LENGTH_LONG).show();
+        }
+
+        return tags;
+    }
+
 }

@@ -4,8 +4,11 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_principal">Random Dominion</string>
     <string name="title_activity_list">ListActivity</string>
+
     <string name="button_allList">Mostrar todas las cartas</string>
     <string name="button_tagList">Mostrar las cartas por categorias</string>
     <string name="button_randomList">Mostrar las cartas para jugar</string>
+
+    <string name="error_expansion">ERROR: No has puesto ninguna Expansión</string>
 
 </resources>

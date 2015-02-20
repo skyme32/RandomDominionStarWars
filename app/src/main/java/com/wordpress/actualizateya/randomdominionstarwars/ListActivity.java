@@ -5,8 +5,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.wordpress.actualizateya.randomdominionstarwars.R;
+import java.util.ArrayList;
 
 
 public class ListActivity extends ActionBarActivity {
@@ -17,6 +19,19 @@ public class ListActivity extends ActionBarActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_list);
+
+        //Recibir parametros de la activity anterior
+        ArrayList<String> l = (ArrayList<String>) getIntent().getExtras().get("tags");
+        //Toast.makeText(this, "ParametrosActivity devolvió: " + l.get(0), Toast.LENGTH_LONG).show();
+
+        String m = "";
+        for (int i = 0; i < l.size(); i++) {
+            m = m + l.get(i) +"\n";
+        }
+
+        TextView tx = (TextView) findViewById(R.id.tx);
+        tx.setText(m);
+
     }
 
 
