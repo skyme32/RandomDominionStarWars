@@ -23,6 +23,9 @@
         <activity
             android:name=".ListActivity"
             android:label="@string/title_activity_list" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wordpress.actualizateya.randomdominionstarwars.PrincipalActivity" />
         </activity>
     </application>
 
