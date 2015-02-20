@@ -1,17 +1,26 @@
 package com.wordpress.actualizateya.randomdominionstarwars;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import android.widget.Button;
+
 import android.widget.ListView;
+
+
 import java.util.ArrayList;
 
 
-public class PrincipalActivity extends ActionBarActivity {
+public class PrincipalActivity extends ActionBarActivity implements View.OnClickListener {
 
     ListView lv;
-    PlanetAdapter plAdapter;
+    InteractiveArrayAdapter plAdapter;
+    String[] an;
+    Button btnAllList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +29,13 @@ public class PrincipalActivity extends ActionBarActivity {
 
         //Inicializar la lista y añadir el adaptador
         lv = (ListView) findViewById(R.id.listview);
-        plAdapter = new PlanetAdapter(displayPlanetList(), this);
+        plAdapter = new InteractiveArrayAdapter(this, displayPlanetList());
         lv.setAdapter(plAdapter);
+
+        //Inicializar botones y darles accion
+        btnAllList = (Button) findViewById(R.id.buttonAllList);
+        btnAllList.setOnClickListener(this);
+
     }
 
 
@@ -47,20 +61,28 @@ public class PrincipalActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private ArrayList<Tag> displayPlanetList() {
+    private ArrayList<Model> displayPlanetList() {
 
-        ArrayList<Tag> tagtList = new ArrayList<Tag>();
-        String[] an = getResources().getStringArray(R.array.tags);
+        ArrayList<Model> tagtList = new ArrayList<Model>();
+        an = getResources().getStringArray(R.array.tags);
 
         //Recorrer la lista de array y añadirla al a una arraylist
         for (int y = 0; y < an.length; y++) {
             System.out.printf(an[y]);
-            tagtList.add(new Tag(an[y]));
+            tagtList.add(new Model(an[y]));
         }
 
         //Marcar la primera de basico
         tagtList.get(0).setSelected(true);
 
         return tagtList;
+    }
+
+    @Override
+    public void onClick(View v) {
+        // Start main activity
+        Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
+        PrincipalActivity.this.startActivity(intent);
+
     }
 }
