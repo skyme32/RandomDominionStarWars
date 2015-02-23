@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="title">
+        <item>Batalla espacial</item>
+        <item>Batalla terrestre</item>
+        <item>Bosque de Endor</item>
+    </string-array>
+    <string-array name="image">
+        <item>batalla_espacial</item>
+        <item>batalla_terrestre</item>
+        <item>bosque_endor</item>
+    </string-array>
+    <string-array name="desc">
+        <item>+1 Carta\n+1 Acción\n+1 Compra\n+1 Credito</item>
+        <item>+2 Acciones\n+1 Compra\n+2 Creditos</item>
+        <item>Consigues 1 Puntos de Victoria por cada 10 cartas que tengas en tu mazo (redondeando hacia abajo).</item>
+    </string-array>
+    <string-array name="cost">
+        <item>5</item>
+        <item>5</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="expansion">
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+    </string-array>
+</resources>

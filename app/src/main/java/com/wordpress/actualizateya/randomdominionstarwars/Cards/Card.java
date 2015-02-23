@@ -9,12 +9,14 @@ public class Card {
     private String descriptions;
     private int drawableImageID;
     private int drawableImageIDcost;
+    private String expansion;
 
-    public Card(String title, String descriptions, int drawableImageID, int cost) {
+    public Card(String title, String expansion, int drawableImageIDcost, int drawableImageID, String descriptions) {
         this.title = title;
-        this.descriptions = descriptions;
+        this.expansion = expansion;
+        this.drawableImageIDcost = drawableImageIDcost;
         this.drawableImageID = drawableImageID;
-        this.drawableImageIDcost = cost;
+        this.descriptions = descriptions;
     }
 
     public String getTitle() {
@@ -25,12 +27,12 @@ public class Card {
         this.title = title;
     }
 
-    public String getDescriptions() {
-        return descriptions;
+    public String getExpansion() {
+        return expansion;
     }
 
-    public void setDescriptions(String descriptions) {
-        this.descriptions = descriptions;
+    public void setExpansion(String expansion) {
+        this.expansion = expansion;
     }
 
     public int getDrawableImageIDcost() {
@@ -47,5 +49,13 @@ public class Card {
 
     public void setDrawableImageID(int drawableImageID) {
         this.drawableImageID = drawableImageID;
+    }
+
+    public String getDescriptions() {
+        return descriptions;
+    }
+
+    public void setDescriptions(String descriptions) {
+        this.descriptions = descriptions;
     }
 }

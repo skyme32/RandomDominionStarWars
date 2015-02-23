@@ -9,11 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+import java.util.ArrayList;
 
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.InteractiveArrayAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.Model;
+import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
 
-import java.util.ArrayList;
+;
 
 
 public class PrincipalActivity extends ActionBarActivity implements View.OnClickListener {
@@ -21,6 +23,7 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
     //Constants
 
     //Varibles
+    ArrayList<Card> arrayCards = new ArrayList();
     ListView lv;
     InteractiveArrayAdapter plAdapter;
     ArrayList<Model> tagList;
@@ -46,7 +49,6 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
         btnTagList.setOnClickListener(this);
         btnRandomList = (Button) findViewById(R.id.buttonRandomList);
         btnRandomList.setOnClickListener(this);
-
     }
 
 
@@ -96,15 +98,11 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
         if (id == btnAllList.getId()) {
             mark = 1;
             tags = ArrayTags(mark);
-
         } else if (id == btnTagList.getId()) {
             tags = ArrayTags(mark);
-
         } else if (id == btnRandomList.getId()) {
             tags = ArrayTags(mark);
-
         }
-
 
         // Start main activity
         Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
@@ -135,5 +133,4 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
 
         return tags;
     }
-
 }

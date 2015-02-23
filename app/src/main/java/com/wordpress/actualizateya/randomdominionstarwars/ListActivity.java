@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class ListActivity extends ActionBarActivity {
 
+    ArrayList<String> arrayTags;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,16 +23,11 @@ public class ListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_list);
 
         //Recibir parametros de la activity anterior
-        ArrayList<String> l = (ArrayList<String>) getIntent().getExtras().get("tags");
+        arrayTags = (ArrayList<String>) getIntent().getExtras().get("tags");
         //Toast.makeText(this, "ParametrosActivity devolvió: " + l.get(0), Toast.LENGTH_LONG).show();
 
-        String m = "";
-        for (int i = 0; i < l.size(); i++) {
-            m = m + l.get(i) +"\n";
-        }
-
         TextView tx = (TextView) findViewById(R.id.tx);
-        tx.setText(m);
+        tx.setText("hhh");
 
     }
 
@@ -55,5 +52,18 @@ public class ListActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //Array que mete todas las cartas
+    public void ArrayCards() {
+
+        String [] title = getResources().getStringArray(R.array.title);
+        String [] desc = getResources().getStringArray(R.array.desc);
+        String [] cost = getResources().getStringArray(R.array.cost);
+        String [] image = getResources().getStringArray(R.array.image);
+        String [] exp = getResources().getStringArray(R.array.expansion);
+
+        //Toast.makeText(getApplication(),title[y]+","+desc[y]+","+cost[y]+","+image[y]+","+exp[y],Toast.LENGTH_LONG).show();
+        //arrayCards.add(new Card(title[y], exp[y], getResources().getIdentifier(image[y], "drawable", getPackageName()), getResources().getIdentifier("money" + cost[y], "drawable", getPackageName()), desc[y]));
     }
 }
