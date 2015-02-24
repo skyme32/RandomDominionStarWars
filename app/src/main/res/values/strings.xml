@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Random Dominion</string>
 
-    <string name="action_settings">Configuración</string>
     <string name="action_help">Ayuda</string>
     <string name="action_about">Nosotros</string>
     <string name="title_activity_principal">Random Dominion</string>
@@ -12,8 +11,13 @@
     <string name="button_randomList">Mostrar las cartas para jugar</string>
 
     <string name="error_expansion">ERROR: No has puesto ninguna Expansión</string>
-    <string name="title_activity_settings">Configuración</string>
 
-    <string name="hello_world">Hello world!</string>
+
+    //settings
+    <string name="action_settings">Configuración</string>
+    <string name="title_activity_settings">Configuración</string>
+    <string name="desc_num_cards">Aquí pondremos el numero de cartas que queremos que nos muertre el random</string>
+    <string name="dialog_num_cards">Indicar numero de Cartas</string>
+    <string name="title_num_cards">Numero de cartas</string>
 
 </resources>

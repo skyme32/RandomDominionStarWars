@@ -105,10 +105,15 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
             tags = ArrayTags(mark);
         }
 
-        // Start main activity
-        Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
-        intent.putExtra("tags", tags);
-        PrincipalActivity.this.startActivity(intent);
+        if (tags.size() == 0) {
+            Toast.makeText(getApplication(), R.string.error_expansion, Toast.LENGTH_SHORT).show();
+        }else{
+            // Start main activity
+            Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
+            intent.putExtra("tags", tags);
+            PrincipalActivity.this.startActivity(intent);
+        }
+
     }
 
     //Array para mirar que tags ponemos y cules no
@@ -125,11 +130,6 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
                     tags.add(tagList.get(i).getName());
                 }
             }
-        }
-
-
-        if (tags.size() == 0) {
-            Toast.makeText(getApplication(), R.string.error_expansion, Toast.LENGTH_LONG).show();
         }
 
         return tags;

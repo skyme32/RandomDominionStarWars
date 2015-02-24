@@ -4,9 +4,9 @@
     <PreferenceCategory android:title="Configuración cartas">
         <ListPreference
             android:key="ncartas"
-            android:title="Numero de cartas"
-            android:summary="Aquí pondremos el numero de cartas que queremos que nos muertre el random"
-            android:dialogTitle="Indicar numero de Cartas"
+            android:title="@string/title_num_cards"
+            android:summary="@string/button_randomList"
+            android:dialogTitle="@string/dialog_num_cards"
             android:entries="@array/num_cards"
             android:entryValues="@array/num_cards" />
     </PreferenceCategory>
