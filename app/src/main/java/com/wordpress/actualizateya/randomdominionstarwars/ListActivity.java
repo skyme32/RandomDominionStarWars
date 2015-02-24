@@ -1,5 +1,7 @@
 package com.wordpress.actualizateya.randomdominionstarwars;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -26,33 +28,13 @@ public class ListActivity extends ActionBarActivity {
         arrayTags = (ArrayList<String>) getIntent().getExtras().get("tags");
         //Toast.makeText(this, "ParametrosActivity devolvió: " + l.get(0), Toast.LENGTH_LONG).show();
 
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(ListActivity.this);
+
         TextView tx = (TextView) findViewById(R.id.tx);
-        tx.setText("hhh");
+        tx.setText(pref.getString("ncartas", "10"));
 
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_list, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     //Array que mete todas las cartas
     public void ArrayCards() {
