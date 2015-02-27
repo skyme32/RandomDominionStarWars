@@ -4,7 +4,7 @@
     <string name="action_help">Ayuda</string>
     <string name="action_about">Nosotros</string>
     <string name="title_activity_principal">Random Dominion</string>
-    <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_list">Lista de cartas</string>
 
     <string name="button_allList">Mostrar todas las cartas</string>
     <string name="button_tagList">Mostrar las cartas por categorias</string>

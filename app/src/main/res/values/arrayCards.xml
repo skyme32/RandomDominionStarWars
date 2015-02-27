@@ -2,7 +2,7 @@
 <resources>
     <string-array name="title">
         <item>Batalla espacial</item>
-        <item>Batalla terrestre por todo el universo</item>
+        <item>Batalla terrestre</item>
         <item>Bosque de Endor</item>
     </string-array>
     <string-array name="image">

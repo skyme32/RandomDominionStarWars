@@ -94,6 +94,7 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
     public void onClick(View v) {
         Integer id = v.getId();
         Integer mark = 0;
+        String random = "";
         ArrayList<String> tags = new ArrayList();
 
         if (id == btnAllList.getId()) {
@@ -103,6 +104,7 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
             tags = ArrayTags(mark);
         } else if (id == btnRandomList.getId()) {
             tags = ArrayTags(mark);
+            random = "R";
         }
 
         if (tags.size() == 0) {
@@ -111,6 +113,7 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
             // Start main activity
             Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
             intent.putExtra("tags", tags);
+            intent.putExtra("random", random);
             PrincipalActivity.this.startActivity(intent);
         }
 
