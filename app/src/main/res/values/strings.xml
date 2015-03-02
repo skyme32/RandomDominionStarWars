@@ -19,5 +19,8 @@
     <string name="desc_num_cards">Aquí pondremos el numero de cartas que queremos que nos muertre el random</string>
     <string name="dialog_num_cards">Indicar numero de Cartas</string>
     <string name="title_num_cards">Numero de cartas</string>
+    <string name="title_activity_card">CardActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

@@ -1,9 +1,12 @@
 package com.wordpress.actualizateya.randomdominionstarwars.Cards;
 
+import java.io.Serializable;
+
 /**
  * Created by skyme on 20/02/15.
  */
-public class Card {
+@SuppressWarnings("serial")
+public class Card implements Serializable {
 
     private String title;
     private String descriptions;

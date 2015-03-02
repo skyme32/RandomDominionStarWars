@@ -1,5 +1,6 @@
 package com.wordpress.actualizateya.randomdominionstarwars;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
@@ -22,6 +23,8 @@ public class ListActivity extends ActionBarActivity implements AdapterView.OnIte
     private ListView lvCards;
     private CardsAdapter adapter;
     private String random;
+    private ArrayList<Card> cards;
+    private ArrayList<String> arrayTags;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +50,9 @@ public class ListActivity extends ActionBarActivity implements AdapterView.OnIte
     public ArrayList<Card> arrayOfCards() {
 
         //Recibir parametros de la activity anterior
-        ArrayList<String> arrayTags = (ArrayList<String>) getIntent().getExtras().get("tags");
+        arrayTags = (ArrayList<String>) getIntent().getExtras().get("tags");
         random = (String) getIntent().getExtras().get("random");
-        ArrayList<Card> cards = new ArrayList<Card>();
+        cards = new ArrayList<Card>();
         //Toast.makeText(this, "ParametrosActivity devolvió: " + l.get(0), Toast.LENGTH_LONG).show();
 
         String [] title = getResources().getStringArray(R.array.title);
@@ -108,6 +111,9 @@ public class ListActivity extends ActionBarActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(ListActivity.this, CardActivity.class);
+        intent.putExtra("card", cards.get(position));
+        startActivity(intent);
 
     }
 }
