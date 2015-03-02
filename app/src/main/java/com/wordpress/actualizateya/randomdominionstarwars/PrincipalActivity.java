@@ -1,6 +1,8 @@
 package com.wordpress.actualizateya.randomdominionstarwars;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,6 +23,7 @@ import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
 public class PrincipalActivity extends ActionBarActivity implements View.OnClickListener {
 
     //Constants
+    private static final String URI = "http://labsk.net/index.php?PHPSESSID=rrvn4kqr0687vftuura39rpdi1&topic=25630.0";
 
     //Varibles
     ArrayList<Card> arrayCards = new ArrayList();
@@ -35,6 +38,8 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setIcon(R.mipmap.ic_launcher);
         setContentView(R.layout.activity_principal);
 
         //Inicializar la lista y añadir el adaptador
@@ -69,6 +74,11 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             startActivity(new Intent(PrincipalActivity.this,SettingsActivity.class));
+            return true;
+        }else if (id == R.id.action_about) {
+            startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(URI)));
+            return true;
+        }else if (id == R.id.action_help) {
             return true;
         }
 

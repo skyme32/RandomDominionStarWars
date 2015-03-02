@@ -4,23 +4,91 @@
         <item>Batalla espacial</item>
         <item>Batalla terrestre</item>
         <item>Bosque de Endor</item>
+        <item>Ewoks</item>
+        <item>Escuadrón rojo</item>
+        <item>Moff Tarkin</item>
+        <item>Darth Vader</item>
+        <item>C3PO - R2D2</item>
+        <item>Halcón Milenario</item>
+        <item>El emperador</item>
+        <item>Obi Wan Kenobi</item>
+        <item>Stormtroopers</item>
+        <item>Hangar</item>
+        <item>Defensas</item>
+        <item>Jabba the Hutt</item>
+        <item>Speeder</item>
     </string-array>
+
     <string-array name="image">
         <item>batalla_espacial</item>
         <item>batalla_terrestre</item>
-        <item>bosque_endor</item>
+        <item>bosque_endor</item>v
+        <item>ewoks</item>
+        <item>escuadron_rojo</item>
+        <item>moff_tarkin</item>
+        <item>darth_vader</item>
+        <item>c3po_r2d2</item>
+        <item>halcon_milenario</item>
+        <item>emperador</item>
+        <item>obi_wan</item>
+        <item>stormtrooper</item>
+        <item>hangar</item>
+        <item>defensas</item>
+        <item>jabba_hutt</item>
+        <item>speeder</item>
     </string-array>
+
     <string-array name="desc">
         <item>+1 Carta\n+1 Acción\n+1 Compra\n+1 Credito</item>
         <item>+2 Acciones\n+1 Compra\n+2 Creditos</item>
         <item>Consigues 1 Puntos de Victoria por cada 10 cartas que tengas en tu mazo (redondeando hacia abajo).</item>
+        <item>+1 Compra\n+2 Creditos</item>
+        <item>+3 Cartas</item>
+        <item>+2 Creditos\nPuedes poner inmediatamente tu mazo en tu pila de descartes.</item>
+        <item>+2 Cartas\nCada uno de los demás jugadores gana una carta de Lado Oscuro.</item>
+        <item>Gana una carta que tenga un coste máximo de 4 Creditos.</item>
+        <item>Elimina hasta 4 cartas de tu mano.</item>
+        <item>Descubre las primeras 5 cartas de tu mazo. El jugador de tu izquierda elige una carta para que la descartes y las otras 4 cartas van a tu mano.</item>
+        <item>Elimina una carta de tu mano. Gana una carta que cueste hasta 2 más que la carta eliminada</item>
+        <item>+2 Cartas\nLos demás jugadores se descartan hasta quedarse con 3 cartas en la mano.</item>
+        <item>+2 Cartas\n+1 Acción</item>
+        <item>+2 Cartas\n-----------------\nCuando otro jugador juegue una carta de Ataque, puedes enseñar esta carta de tu mano. Si lo haces, el Ataque no te afecta.</item>
+        <item>+1 Carta\n+1 Acción\nCada jugador (incluido tú) revela la carta superior de su mazo y tú decides si la descarta o la devuelve a su sitio.</item>
+        <item>++1 Acción\nDescarta las cartas que quieras. Roba una Carta por cada carta descartada.</item>
     </string-array>
+
     <string-array name="cost">
         <item>5</item>
         <item>5</item>
         <item>4</item>
+        <item>3</item>
+        <item>4</item>
+        <item>3</item>
+        <item>5</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>5</item>
+        <item>2</item>
+        <item>4</item>
+        <item>2</item>
     </string-array>
     <string-array name="expansion">
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
+        <item>Basico</item>
         <item>Basico</item>
         <item>Basico</item>
         <item>Basico</item>
