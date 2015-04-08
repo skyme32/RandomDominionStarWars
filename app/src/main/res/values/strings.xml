@@ -5,11 +5,9 @@
     <string name="action_about">Nosotros</string>
     <string name="title_activity_principal">Random Dominion</string>
     <string name="title_activity_list">Lista de cartas</string>
-
     <string name="button_allList">Mostrar todas las cartas</string>
     <string name="button_tagList">Mostrar las cartas por categorias</string>
     <string name="button_randomList">Mostrar las cartas para jugar</string>
-
     <string name="error_expansion">ERROR: No has puesto ninguna Expansión</string>
 
 
@@ -19,8 +17,17 @@
     <string name="desc_num_cards">Aquí pondremos el numero de cartas que queremos que nos muertre el random</string>
     <string name="dialog_num_cards">Indicar numero de Cartas</string>
     <string name="title_num_cards">Numero de cartas</string>
-    <string name="title_activity_card">CardActivity</string>
 
+    //Headers
+    <string name="header_general">General</string>
+    <string name="header_advanced">Advanzado</string>
+
+    <string name="extra_category">category</string>
+    <string name="category_general">category_general</string>
+    <string name="category_advanced">category_advanced</string>
+
+
+    <string name="title_activity_card">CardActivity</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>
