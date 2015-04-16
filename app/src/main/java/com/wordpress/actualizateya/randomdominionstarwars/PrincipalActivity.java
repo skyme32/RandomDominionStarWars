@@ -42,7 +42,7 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
         setContentView(R.layout.activity_principal);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.title_activity_principal);
+        setSupportActionBar(toolbar);
 
         //Inicializar la lista y añadir el adaptador
         lv = (ListView) findViewById(R.id.listview);
