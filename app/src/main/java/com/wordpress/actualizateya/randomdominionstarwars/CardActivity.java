@@ -6,8 +6,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,13 +24,20 @@ public class CardActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_card);
 
         Card card = (Card)getIntent().getExtras().getSerializable("card");
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(card.getTitle());
-        //actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#dcdcdc")));
-        setContentView(R.layout.activity_card);
+        // Personalizar el navigation bar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(card.getTitle());
+        toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         img = (ImageView) findViewById(R.id.imageCard);
         img.setImageResource(card.getDrawableImageID());

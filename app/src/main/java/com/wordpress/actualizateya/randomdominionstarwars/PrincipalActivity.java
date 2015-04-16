@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,9 +39,10 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setIcon(R.mipmap.ic_launcher);
         setContentView(R.layout.activity_principal);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.title_activity_principal);
 
         //Inicializar la lista y añadir el adaptador
         lv = (ListView) findViewById(R.id.listview);
