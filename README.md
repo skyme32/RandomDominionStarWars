@@ -16,10 +16,10 @@ Simple Tests of android and great aplication for Dominion Star wars
 
 I want implementation material design on to settings and navigation drawer. Then implement the nexts expasion of dominon Star wars
 
-<a href="http://www.subirimagenes.net/i/150418024731898324.png" target="_blank" title="subir imagen"><img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024731898324.png" border="0" alt="subir imagenes" /></a>
-<a href="http://www.subirimagenes.net/i/150418024733989067.png" target="_blank" title="subir imagen"><img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024733989067.png" border="0" alt="subir imagenes" /></a>
-<a href="http://www.subirimagenes.net/i/150418024732698790.png" target="_blank" title="subir imagen"><img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024732698790.png" border="0" alt="subir imagenes" /></a>
-<a href="http://www.subirimagenes.net/i/150418024733714660.png" target="_blank" title="subir imagen"><img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024733714660.png" border="0" alt="subir imagenes" /></a>
+<img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024731898324.png" border="0" alt="subir imagenes" />
+<img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024733989067.png" border="0" alt="subir imagenes" />
+<img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024732698790.png" border="0" alt="subir imagenes" />
+<img src="http://sia1.subirimagenes.net/img/2015/04/18/mini_150418024733714660.png" border="0" alt="subir imagenes" />
 
 <h1>Require</h1>
 Android studio or Eclipse with sdk
