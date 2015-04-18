@@ -1,8 +1,9 @@
 package com.wordpress.actualizateya.randomdominionstarwars;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +15,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
+import com.wordpress.actualizateya.randomdominionstarwars.Settings.PrefsFragment;
+import com.wordpress.actualizateya.randomdominionstarwars.Settings.Settings;
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.InteractiveArrayAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.Model;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
@@ -75,7 +78,7 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(PrincipalActivity.this,SettingsActivity.class));
+            startActivity(new Intent(PrincipalActivity.this, Settings.class));
             return true;
         }else if (id == R.id.action_about) {
             startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(URI)));
@@ -85,6 +88,23 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher)
+                .setTitle(R.string.title_dialog)
+                .setMessage(R.string.desc_dialog)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.no, null)
+                .show();
     }
 
     private ArrayList<Model> displayPlanetList() {

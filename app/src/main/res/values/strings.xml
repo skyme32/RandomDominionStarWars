@@ -10,7 +10,6 @@
     <string name="button_randomList">Mostrar las cartas para jugar</string>
     <string name="error_expansion">ERROR: No has puesto ninguna Expansión</string>
 
-
     //settings
     <string name="action_settings">Configuración</string>
     <string name="title_activity_settings">Configuración</string>
@@ -22,9 +21,12 @@
     <string name="header_general">General</string>
     <string name="header_advanced">Advanzado</string>
 
-    <string name="extra_category">category</string>
-    <string name="category_general">category_general</string>
-    <string name="category_advanced">category_advanced</string>
+    //Dialog
+    <string name="yes">Si</string>
+    <string name="title_dialog">Cerrar la aplicación</string>
+    <string name="no">No</string>
+    <string name="desc_dialog">¿Estas seguro de que deseas cerrar la aplicación?</string>
+
 
 
     <string name="title_activity_card">CardActivity</string>

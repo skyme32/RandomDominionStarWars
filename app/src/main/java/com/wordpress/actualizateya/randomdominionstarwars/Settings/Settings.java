@@ -1,18 +1,18 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Settings;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.preference.PreferenceActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import java.util.List;
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 
-
-public class SettingsActivity extends PreferenceActivity {
+public class Settings extends PreferenceActivity {
     private Toolbar mToolBar;
 
     @Override
@@ -20,6 +20,9 @@ public class SettingsActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
 
         prepareLayout();
+
+        getFragmentManager().beginTransaction().replace(android.R.id.content,
+                new PrefsFragment()).commit();
     }
 
     private void prepareLayout() {
@@ -42,16 +45,5 @@ public class SettingsActivity extends PreferenceActivity {
         });
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    @Override
-    public void onBuildHeaders(List<Header> target) {
-        super.onBuildHeaders(target);
-        loadHeadersFromResource(R.xml.headers, target);
-    }
 
-    @TargetApi(Build.VERSION_CODES.KITKAT)
-    @Override
-    protected boolean isValidFragment(String fragmentName) {
-        return fragmentName.equals(PrefsFragment.class.getName());
-    }
 }
