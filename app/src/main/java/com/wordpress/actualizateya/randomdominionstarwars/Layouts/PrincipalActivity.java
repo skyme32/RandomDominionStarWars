@@ -1,4 +1,4 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Layouts;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
-import com.wordpress.actualizateya.randomdominionstarwars.Settings.PrefsFragment;
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 import com.wordpress.actualizateya.randomdominionstarwars.Settings.Settings;
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.InteractiveArrayAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.Tags.Model;

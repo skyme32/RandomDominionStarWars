@@ -1,4 +1,4 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Layouts;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 
 public class CardActivity extends ActionBarActivity {

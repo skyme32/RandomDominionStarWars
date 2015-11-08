@@ -1,10 +1,11 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Layouts;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 
 public class SplahActivity extends ActionBarActivity {

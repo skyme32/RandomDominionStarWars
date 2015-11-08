@@ -1,20 +1,18 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Layouts;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.CardsAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 import java.util.ArrayList;
 
