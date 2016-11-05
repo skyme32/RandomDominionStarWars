@@ -1,0 +1,14 @@
+<tabs>
+    <tab
+        id="@+id/tab_All"
+        icon="?attr/homeAsUpIndicator"
+        title="All Cards" />
+    <tab
+        id="@+id/tab_category"
+        icon="?attr/homeAsUpIndicator"
+        title="Category" />
+    <tab
+        id="@+id/tab_play"
+        icon="@drawable/ic_play"
+        title="Jugar" />
+</tabs>

@@ -2,10 +2,8 @@
 <resources>
     <string-array name="tags">
         <item>Basico</item>
-        <!---
         <item>Terramar</item>
         <item>Intriga</item>
-        -->
     </string-array>
     <string-array name="num_cards">
         <item>8</item>

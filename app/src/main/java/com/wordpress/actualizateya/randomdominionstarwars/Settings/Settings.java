@@ -36,7 +36,7 @@ public class Settings extends PreferenceActivity {
 
         mToolBar = (Toolbar) toolbarContainer.findViewById(R.id.toolbar);
         mToolBar.setTitle(getTitle());
-        mToolBar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        //mToolBar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
