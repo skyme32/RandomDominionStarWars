@@ -5,7 +5,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.wordpress.actualizateya.randomdominionstarwars.PrincipalTab;
 import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 

@@ -1,17 +1,19 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Layouts;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.IdRes;
-import android.support.design.widget.TabLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -21,7 +23,8 @@ import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.CardsAdapter;
-import com.wordpress.actualizateya.randomdominionstarwars.Layouts.CardActivity;
+import com.wordpress.actualizateya.randomdominionstarwars.R;
+import com.wordpress.actualizateya.randomdominionstarwars.Settings.Settings;
 
 import java.util.ArrayList;
 
@@ -32,8 +35,9 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
 
     private ListView lvCards;
     private CardsAdapter adapter;
-    private String random;
     private ArrayList<Card> cards;
+    private ArrayList<Card> play_cards;
+    private ArrayList<Card> category_cards;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private BottomBar bottomBar;
 
@@ -50,9 +54,12 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
 
         lvCards = (ListView) findViewById(R.id.listCard);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
+        mSwipeRefreshLayout.setColorSchemeResources(R.color.bb_darkBackgroundColor, R.color.green);
+
         // Asignamos el Adapter al ListView, en este punto hacemos que el
         // ListView muestre los datos que queremos.
         lvCards.setAdapter(adapter);
+
         // Asignamos el Listener al ListView para cuando pulsamos sobre uno de
         // sus items.
         lvCards.setOnItemClickListener(this);
@@ -63,6 +70,33 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         bottomBar.setOnTabSelectListener(this);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_card, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(PrincipalTab.this, Settings.class));
+            return true;
+        }else if (id == R.id.action_about) {
+            startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(URI)));
+            return true;
+        }else if (id == R.id.action_help) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onBackPressed() {
@@ -84,9 +118,11 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
     public void onTabSelected(@IdRes int tabId) {
 
         if (tabId == R.id.tab_play) {
-            Toast.makeText(getApplicationContext(), "Play play", Toast.LENGTH_SHORT).show();
-        } else {
+            lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, getArrayPlayOfCards()));
+        } else if (tabId == R.id.tab_category) {
             //∫Toast.makeText(getApplicationContext(), "Hello toast!", Toast.LENGTH_SHORT).show();
+        }else {
+            lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, cards));
         }
 
     }
@@ -95,6 +131,8 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
     public void onRefresh() {
         if (bottomBar.getCurrentTabId() == R.id.tab_play) {
             refreshContent();
+        } else if (bottomBar.getCurrentTabId() == R.id.tab_category) {
+            mSwipeRefreshLayout.setRefreshing(false);
         }else {
             mSwipeRefreshLayout.setRefreshing(false);
         }
@@ -114,13 +152,17 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                lvCards.setAdapter(adapter);
+                lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, getArrayPlayOfCards()));
                 mSwipeRefreshLayout.setRefreshing(false);
             }
         }, 1500);
     }
 
-    //Array que mete todas las cartas
+
+    /**
+     * Array que mete todas las cartas
+     * @return void
+     */
     public ArrayList<Card> arrayOfCards () {
         //Recibir parametros de la activity anterior
         cards = new ArrayList<Card>();
@@ -146,6 +188,26 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         //cards.add(new Card(title[y], exp[y], getResources().getIdentifier(image[y], "drawable", getPackageName()), getResources().getIdentifier("money" + cost[y], "drawable", getPackageName()), desc[y]));
     }
 
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Card> getArrayPlayOfCards () {
+        play_cards = new ArrayList<Card>();
+        //function that create arraylist with 10 numbers
+        ArrayList<Integer> randomNumbers = RandomToTenNumbers(cards.size());
+
+        for (int i = 0; i < randomNumbers.size() ; i++) {
+            play_cards.add(cards.get(randomNumbers.get(i)));
+        }
+        return play_cards;
+    }
+
+    /**
+     *
+     * @param size
+     * @return
+     */
     public ArrayList<Integer> RandomToTenNumbers ( int size){
         //Sharedpreferences
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(PrincipalTab.this);

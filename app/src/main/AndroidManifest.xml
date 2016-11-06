@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Layouts.PrincipalActivity"
+            android:name=".Layouts.PrincipalActivity_old"
             android:label="@string/title_activity_principal"
             android:screenOrientation="portrait"></activity>
         <activity
@@ -27,7 +27,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Layouts.PrincipalActivity" />
+                android:value=".Layouts.PrincipalActivity_old" />
         </activity>
         <activity
             android:name=".Layouts.CardActivity"
@@ -37,7 +37,7 @@
             android:name=".Settings.Settings"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppThemeSttings"></activity>
-        <activity android:name=".PrincipalTab"></activity>
+        <activity android:name=".Layouts.PrincipalTab"></activity>
     </application>
 
 </manifest>

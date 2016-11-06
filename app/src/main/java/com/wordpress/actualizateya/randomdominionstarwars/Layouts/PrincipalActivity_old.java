@@ -24,7 +24,7 @@ import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
 ;
 
 
-public class PrincipalActivity extends ActionBarActivity implements View.OnClickListener {
+public class PrincipalActivity_old extends ActionBarActivity implements View.OnClickListener {
 
     //Constants
     private static final String URI = "http://labsk.net/index.php?PHPSESSID=rrvn4kqr0687vftuura39rpdi1&topic=25630.0";
@@ -78,7 +78,7 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(PrincipalActivity.this, Settings.class));
+            startActivity(new Intent(PrincipalActivity_old.this, Settings.class));
             return true;
         }else if (id == R.id.action_about) {
             startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(URI)));
@@ -143,10 +143,10 @@ public class PrincipalActivity extends ActionBarActivity implements View.OnClick
             Toast.makeText(getApplication(), R.string.error_expansion, Toast.LENGTH_SHORT).show();
         }else{
             // Start main activity
-            Intent intent = new Intent(PrincipalActivity.this, ListActivity.class);
+            Intent intent = new Intent(PrincipalActivity_old.this, ListActivity.class);
             intent.putExtra("tags", tags);
             intent.putExtra("random", random);
-            PrincipalActivity.this.startActivity(intent);
+            PrincipalActivity_old.this.startActivity(intent);
         }
 
     }
