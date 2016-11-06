@@ -14,21 +14,26 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
     </android.support.v7.widget.Toolbar>
 
-<!-- This could be your fragment container, or something -->
-<FrameLayout
-    android:id="@+id/contentContainer"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_above="@+id/bottomBar" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/activity_main_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/bottomBar">
+        <ListView
+            android:id="@+id/listCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 
-<com.roughike.bottombar.BottomBar
-    android:id="@+id/bottomBar"
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:layout_alignParentBottom="true"
-    app:bb_tabXmlResource="@xml/bottombar_tabs"
-    app:bb_inActiveTabColor="@color/inActive"
-    app:bb_activeTabColor="@color/active"
-    android:background="?attr/colorPrimary" />
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:bb_tabXmlResource="@xml/bottombar_tabs"
+        app:bb_inActiveTabColor="@color/inActive"
+        app:bb_activeTabColor="@color/active"
+        android:background="?attr/colorPrimary" />
 
 </RelativeLayout>
