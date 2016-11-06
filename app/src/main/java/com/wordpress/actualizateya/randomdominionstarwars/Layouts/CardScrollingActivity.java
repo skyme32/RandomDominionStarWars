@@ -1,4 +1,4 @@
-package com.wordpress.actualizateya.randomdominionstarwars;
+package com.wordpress.actualizateya.randomdominionstarwars.Layouts;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
+import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 public class CardScrollingActivity extends AppCompatActivity {
 

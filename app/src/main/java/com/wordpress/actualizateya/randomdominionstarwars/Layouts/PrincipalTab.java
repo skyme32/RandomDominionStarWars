@@ -21,11 +21,10 @@ import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
-import com.wordpress.actualizateya.randomdominionstarwars.CardScrollingActivity;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.CardsAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.R;
-import com.wordpress.actualizateya.randomdominionstarwars.Settings.Settings;
+import com.wordpress.actualizateya.randomdominionstarwars.Settings.SettingsActivity;
 
 import java.util.ArrayList;
 
@@ -41,6 +40,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
     private ArrayList<Card> category_cards;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private BottomBar bottomBar;
+    private Integer sizeRandom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +87,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(PrincipalTab.this, Settings.class));
+            startActivity(new Intent(PrincipalTab.this, SettingsActivity.class));
             return true;
         }else if (id == R.id.action_about) {
             startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(URI)));
@@ -113,6 +113,14 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
                 })
                 .setNegativeButton(R.string.no, null)
                 .show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //Sharedpreferences
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(PrincipalTab.this);
+        sizeRandom = Integer.parseInt(pref.getString("ncartas", "10"));
     }
 
     @Override
@@ -228,9 +236,6 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
      * @return
      */
     public ArrayList<Integer> RandomToTenNumbers ( int size){
-        //Sharedpreferences
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(PrincipalTab.this);
-        Integer sizeRandom = Integer.parseInt(pref.getString("ncartas", "10"));
         //bucle trought all numbers
         int pos;
         int nCartas = size;

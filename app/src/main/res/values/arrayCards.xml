@@ -18,7 +18,6 @@
         <item>Jabba the Hutt</item>
         <item>Speeder</item>
     </string-array>
-
     <string-array name="image">
         <item>batalla_espacial</item>
         <item>batalla_terrestre</item>
@@ -37,7 +36,6 @@
         <item>jabba_hutt</item>
         <item>speeder</item>
     </string-array>
-
     <string-array name="desc">
         <item>+1 Carta\n+1 Acción\n+1 Compra\n+1 Credito</item>
         <item>+2 Acciones\n+1 Compra\n+2 Creditos</item>
@@ -56,7 +54,6 @@
         <item>+1 Carta\n+1 Acción\nCada jugador (incluido tú) revela la carta superior de su mazo y tú decides si la descarta o la devuelve a su sitio.</item>
         <item>+1 Acción\nDescarta las cartas que quieras. Roba una Carta por cada carta descartada.</item>
     </string-array>
-
     <string-array name="cost">
         <item>5</item>
         <item>5</item>
@@ -92,5 +89,16 @@
         <item>Basico</item>
         <item>Basico</item>
         <item>Basico</item>
+    </string-array>
+    <string-array name="num_cards">
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
     </string-array>
 </resources>
