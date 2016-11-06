@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
+import com.wordpress.actualizateya.randomdominionstarwars.CardScrollingActivity;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.CardsAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.R;
@@ -120,7 +121,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         if (tabId == R.id.tab_play) {
             lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, getArrayPlayOfCards()));
         } else if (tabId == R.id.tab_category) {
-            //∫Toast.makeText(getApplicationContext(), "Hello toast!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "I'm a categary, working NOW.", Toast.LENGTH_SHORT).show();
         }else {
             lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, cards));
         }
@@ -130,29 +131,48 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
     @Override
     public void onRefresh() {
         if (bottomBar.getCurrentTabId() == R.id.tab_play) {
-            refreshContent();
+            refreshContentPlay();
         } else if (bottomBar.getCurrentTabId() == R.id.tab_category) {
             mSwipeRefreshLayout.setRefreshing(false);
         }else {
-            mSwipeRefreshLayout.setRefreshing(false);
+            refreshContentAll();
         }
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Intent intent = new Intent(PrincipalTab.this, CardActivity.class);
-        intent.putExtra("card", cards.get(i));
+        Intent intent = new Intent(PrincipalTab.this, CardScrollingActivity.class);
+
+        if (bottomBar.getCurrentTabId() == R.id.tab_play) {
+            intent.putExtra("card", play_cards.get(i));
+        } else if (bottomBar.getCurrentTabId() == R.id.tab_category) {
+
+        }else {
+            intent.putExtra("card", cards.get(i));
+        }
+
         startActivity(intent);
     }
 
     // this is just for demonstration, not real code!
-    private void refreshContent() {
-
+    private void refreshContentPlay() {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, getArrayPlayOfCards()));
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        }, 1500);
+    }
+
+    // this is just for demonstration, not real code!
+    private void refreshContentAll() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, cards));
                 mSwipeRefreshLayout.setRefreshing(false);
             }
         }, 1500);
@@ -185,7 +205,6 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         }
         System.out.println(cards);
         return cards;
-        //cards.add(new Card(title[y], exp[y], getResources().getIdentifier(image[y], "drawable", getPackageName()), getResources().getIdentifier("money" + cost[y], "drawable", getPackageName()), desc[y]));
     }
 
     /**
@@ -226,5 +245,4 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         return arrNumbers;
     }
 
-
-    }
+}

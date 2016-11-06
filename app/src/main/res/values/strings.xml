@@ -30,5 +30,9 @@
 
     <string name="title_activity_card">CardActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_card_scrolling">CardScrollingActivity</string>
+
+    <string name="title_card">Descripción</string>
+
 
 </resources>

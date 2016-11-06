@@ -20,24 +20,32 @@
         <activity
             android:name=".Layouts.PrincipalActivity_old"
             android:label="@string/title_activity_principal"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Layouts.ListActivity"
-            android:label="@string/title_activity_list"
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_list">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Layouts.PrincipalActivity_old" />
         </activity>
         <activity
             android:name=".Layouts.CardActivity"
-            android:label="@string/title_activity_card"
-            android:screenOrientation="portrait"></activity>
+            android:label="@string/title_activity_card" />
         <activity
             android:name=".Settings.Settings"
             android:label="@string/title_activity_settings"
-            android:theme="@style/AppThemeSttings"></activity>
-        <activity android:name=".Layouts.PrincipalTab"></activity>
+            android:theme="@style/AppThemeSttings" />
+        <activity
+            android:name=".Layouts.PrincipalTab"
+            android:allowEmbedded="@string/title_activity_principal"/>
+        <activity
+            android:name=".CardScrollingActivity"
+            android:label="@string/title_activity_card_scrolling"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Layouts.PrincipalTab" />
+        </activity>
     </application>
 
 </manifest>
