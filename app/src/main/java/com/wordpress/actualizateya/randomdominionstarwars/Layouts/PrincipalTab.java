@@ -5,12 +5,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.IdRes;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
-import com.wordpress.actualizateya.randomdominionstarwars.Cards.CardsAdapter;
+import com.wordpress.actualizateya.randomdominionstarwars.Cards.CardListAdapter;
 import com.wordpress.actualizateya.randomdominionstarwars.R;
 import com.wordpress.actualizateya.randomdominionstarwars.Settings.SettingsActivity;
 
@@ -34,7 +34,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
     private static final String URI = "http://labsk.net/index.php?PHPSESSID=rrvn4kqr0687vftuura39rpdi1&topic=25630.0";
 
     private ListView lvCards;
-    private CardsAdapter adapter;
+    private CardListAdapter adapter;
     private ArrayList<Card> cards;
     private ArrayList<Card> play_cards;
     private ArrayList<Card> category_cards;
@@ -47,11 +47,10 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal_tab);
 
+        arrayOfCards();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Inicializamos las variables.
-        adapter = new CardsAdapter(this, arrayOfCards());
 
         lvCards = (ListView) findViewById(R.id.listCard);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
@@ -59,7 +58,14 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
 
         // Asignamos el Adapter al ListView, en este punto hacemos que el
         // ListView muestre los datos que queremos.
-        lvCards.setAdapter(adapter);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                lvCards.setAdapter(new CardListAdapter(PrincipalTab.this, cards));
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        }, 50);
 
         // Asignamos el Listener al ListView para cuando pulsamos sobre uno de
         // sus items.
@@ -127,11 +133,25 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
     public void onTabSelected(@IdRes int tabId) {
 
         if (tabId == R.id.tab_play) {
-            lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, getArrayPlayOfCards()));
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    lvCards.setAdapter(new CardListAdapter(PrincipalTab.this, getArrayPlayOfCards()));
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+            }, 10);
         } else if (tabId == R.id.tab_category) {
             Toast.makeText(getApplicationContext(), "I'm a categary, working NOW.", Toast.LENGTH_SHORT).show();
         }else {
-            lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, cards));
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    lvCards.setAdapter(new CardListAdapter(PrincipalTab.this, cards));
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+            }, 10);
         }
 
     }
@@ -147,8 +167,10 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         }
     }
 
+
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
         Intent intent = new Intent(PrincipalTab.this, CardScrollingActivity.class);
 
         if (bottomBar.getCurrentTabId() == R.id.tab_play) {
@@ -160,6 +182,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         }
 
         startActivity(intent);
+
     }
 
     // this is just for demonstration, not real code!
@@ -168,10 +191,10 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, getArrayPlayOfCards()));
+                lvCards.setAdapter(new CardListAdapter(PrincipalTab.this, getArrayPlayOfCards()));
                 mSwipeRefreshLayout.setRefreshing(false);
             }
-        }, 1500);
+        }, 1000);
     }
 
     // this is just for demonstration, not real code!
@@ -180,10 +203,10 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                lvCards.setAdapter(new CardsAdapter(PrincipalTab.this, cards));
+                lvCards.setAdapter(new CardListAdapter(PrincipalTab.this, cards));
                 mSwipeRefreshLayout.setRefreshing(false);
             }
-        }, 1500);
+        }, 1000);
     }
 
 
@@ -191,7 +214,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
      * Array que mete todas las cartas
      * @return void
      */
-    public ArrayList<Card> arrayOfCards () {
+    public void arrayOfCards () {
         //Recibir parametros de la activity anterior
         cards = new ArrayList<Card>();
         //Toast.makeText(this, "ParametrosActivity devolvió: " + l.get(0), Toast.LENGTH_LONG).show();
@@ -207,12 +230,10 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
             cards.add(new Card(title[y],
                     exp[y],
                     getResources().getIdentifier("money" + cost[y], "drawable", getPackageName()),
-                    getResources().getIdentifier(image[y], "drawable", getPackageName()),
+                    image[y],
                     desc[y]));
 
         }
-        System.out.println(cards);
-        return cards;
     }
 
     /**

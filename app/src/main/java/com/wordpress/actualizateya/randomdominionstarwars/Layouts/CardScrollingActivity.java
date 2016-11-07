@@ -1,10 +1,7 @@
 package com.wordpress.actualizateya.randomdominionstarwars.Layouts;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
+import com.wordpress.actualizateya.randomdominionstarwars.Cards.ImageDownloaderTask;
 import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 public class CardScrollingActivity extends AppCompatActivity {
@@ -23,6 +21,10 @@ public class CardScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card_scrolling);
         Card card = (Card)getIntent().getExtras().getSerializable("card");
 
+
+
+
+
         setToolbar();// Añadir action bar
 
         CollapsingToolbarLayout collapser =
@@ -30,10 +32,12 @@ public class CardScrollingActivity extends AppCompatActivity {
         collapser.setTitle(card.getTitle()); // Cambiar título
 
         // Add image in the toolbar
-        loadImageParallax(card.getDrawableImageID(),R.id.image_paralax);
+        ImageView image = (ImageView) findViewById(R.id.image_paralax);
+        new ImageDownloaderTask(image).execute(card.getDrawableImageID());
 
         // Implement the Floating button
         loadImageParallax(card.getDrawableImageIDcost(),R.id.detailItemfab);
+
 
         // Add the description
         TextView desc = (TextView) findViewById(R.id.content_card);
