@@ -10,16 +10,25 @@ public class Card implements Serializable {
 
     private String title;
     private String descriptions;
-    private String drawableImageID;
+    private String uriImageID;
+    private int drawableImageID;
     private int drawableImageIDcost;
     private String expansion;
 
-    public Card(String title, String expansion, int drawableImageIDcost, String drawableImageID, String descriptions) {
+    public Card(String title, String expansion, int drawableImageIDcost, int drawableImageID, String descriptions) {
         this.title = title;
         this.expansion = expansion;
         this.drawableImageIDcost = drawableImageIDcost;
         this.drawableImageID = drawableImageID;
         this.descriptions = descriptions;
+    }
+
+    public String getUriImageID() {
+        return uriImageID;
+    }
+
+    public void setUriImageID(String uriImageID) {
+        this.uriImageID = uriImageID;
     }
 
     public String getTitle() {
@@ -46,11 +55,11 @@ public class Card implements Serializable {
         this.drawableImageIDcost = drawableImageIDcost;
     }
 
-    public String getDrawableImageID() {
+    public int getDrawableImageID() {
         return drawableImageID;
     }
 
-    public void setDrawableImageID(String drawableImageID) {
+    public void setDrawableImageID(int drawableImageID) {
         this.drawableImageID = drawableImageID;
     }
 

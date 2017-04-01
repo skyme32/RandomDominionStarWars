@@ -53,9 +53,11 @@ public class CardListAdapter extends BaseAdapter {
         Card newsItem = listData.get(position);
         holder.nombre.setText(newsItem.getTitle());
         holder.imagen_money.setImageResource(newsItem.getDrawableImageIDcost());
+        holder.imagen.setImageResource(newsItem.getDrawableImageID());
+        /**
         if (holder.imagen!= null) {
             new ImageDownloaderTask(holder.imagen).execute(newsItem.getDrawableImageID());
-        }
+        }*/
 
         return convertView;
     }

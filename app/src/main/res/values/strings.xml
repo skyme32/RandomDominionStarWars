@@ -44,9 +44,6 @@
         based on your message history
     </string>
 
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
     <string-array name="pref_example_list_titles">
         <item>Always</item>
@@ -58,6 +55,11 @@
         <item>0</item>
         <item>-1</item>
     </string-array>
+
+    <!-- String Tab menu -->
+    <string name="all_tab_string">All Cards</string>
+    <string name="cat_tab_string">Category Cards</string>
+    <string name="play_cat_string">Playing Cards</string>
 
     <!-- Example settings for Data & Sync -->
     <string name="pref_header_data_sync">Data &amp; sync</string>

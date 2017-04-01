@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.wordpress.actualizateya.randomdominionstarwars.Cards.Card;
-import com.wordpress.actualizateya.randomdominionstarwars.Cards.ImageDownloaderTask;
 import com.wordpress.actualizateya.randomdominionstarwars.R;
 
 public class CardScrollingActivity extends AppCompatActivity {
@@ -33,7 +32,8 @@ public class CardScrollingActivity extends AppCompatActivity {
 
         // Add image in the toolbar
         ImageView image = (ImageView) findViewById(R.id.image_paralax);
-        new ImageDownloaderTask(image).execute(card.getDrawableImageID());
+        //new ImageDownloaderTask(image).execute(card.getDrawableImageID());
+        image.setImageResource(card.getDrawableImageID());
 
         // Implement the Floating button
         loadImageParallax(card.getDrawableImageIDcost(),R.id.detailItemfab);

@@ -19,6 +19,25 @@
         <item>Speeder</item>
     </string-array>
     <string-array name="image">
+        <item>batalla_espacial</item>
+        <item>batalla_terrestre</item>
+        <item>bosque_endor</item>
+        <item>ewoks</item>
+        <item>escuadron_rojo</item>
+        <item>moff_tarkin</item>
+        <item>darth_vader</item>
+        <item>c3po_r2d2</item>
+        <item>halcon_milenario</item>
+        <item>emperador</item>
+        <item>obi_wan</item>
+        <item>stormtrooper</item>
+        <item>hangar</item>
+        <item>defensas</item>
+        <item>jabba_hutt</item>
+        <item>speeder</item>
+    </string-array>
+    <!--
+    <string-array name="image">
         <item>http://lh5.ggpht.com/_hepKlJWopDg/TB-_WXikaYI/AAAAAAAAElI/715k4NvBM4w/s144-c/IMG_0075.JPG</item>
         <item>http://lh4.ggpht.com/_4f1e_yo-zMQ/TCe5h9yN-TI/AAAAAAAAXqs/8X2fIjtKjmw/s144-c/IMG_1786.JPG</item>
         <item>http://lh5.ggpht.com/_hepKlJWopDg/TB-_WXikaYI/AAAAAAAAElI/715k4NvBM4w/s144-c/IMG_0075.JPG</item>
@@ -36,6 +55,7 @@
         <item>http://lh6.ggpht.com/_Nsxc889y6hY/TBp7jfx-cgI/AAAAAAAAHAg/Rr7jX44r2Gc/s144-c/IMGP9775a.jpg</item>
         <item>http://lh6.ggpht.com/_ZN5zQnkI67I/TCFFZaJHDnI/AAAAAAAABVk/YoUbDQHJRdo/s144-c/P9250508.JPG</item>
     </string-array>
+    -->
     <string-array name="desc">
         <item>+1 Carta\n+1 Acción\n+1 Compra\n+1 Credito</item>
         <item>+2 Acciones\n+1 Compra\n+2 Creditos</item>

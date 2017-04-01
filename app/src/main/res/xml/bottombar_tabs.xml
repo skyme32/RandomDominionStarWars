@@ -1,14 +1,11 @@
 <tabs>
     <tab
         id="@+id/tab_All"
-        icon="@drawable/ic_cards"
-        title="All Cards" />
+        icon="@drawable/ic_cards" />
     <tab
         id="@+id/tab_category"
-        icon="@drawable/ic_category"
-        title="Category" />
+        icon="@drawable/ic_category" />
     <tab
         id="@+id/tab_play"
-        icon="@drawable/ic_play"
-        title="Jugar" />
+        icon="@drawable/ic_play" />
 </tabs>

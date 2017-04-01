@@ -41,6 +41,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private BottomBar bottomBar;
     private Integer sizeRandom;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
 
         arrayOfCards();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         lvCards = (ListView) findViewById(R.id.listCard);
@@ -139,10 +140,14 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
                 public void run() {
                     lvCards.setAdapter(new CardListAdapter(PrincipalTab.this, getArrayPlayOfCards()));
                     mSwipeRefreshLayout.setRefreshing(false);
+                    toolbar.setTitle(R.string.play_cat_string);
+                    toolbar.setLogo(R.drawable.ic_play);
                 }
             }, 10);
         } else if (tabId == R.id.tab_category) {
             Toast.makeText(getApplicationContext(), "I'm a categary, working NOW.", Toast.LENGTH_SHORT).show();
+            toolbar.setTitle(R.string.cat_tab_string);
+            toolbar.setLogo(R.drawable.ic_category);
         }else {
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -150,6 +155,8 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
                 public void run() {
                     lvCards.setAdapter(new CardListAdapter(PrincipalTab.this, cards));
                     mSwipeRefreshLayout.setRefreshing(false);
+                    toolbar.setTitle(R.string.all_tab_string);
+                    toolbar.setLogo(R.drawable.ic_cards);
                 }
             }, 10);
         }
@@ -230,7 +237,7 @@ public class PrincipalTab extends AppCompatActivity implements OnTabSelectListen
             cards.add(new Card(title[y],
                     exp[y],
                     getResources().getIdentifier("money" + cost[y], "drawable", getPackageName()),
-                    image[y],
+                    getResources().getIdentifier(image[y], "drawable", getPackageName()),
                     desc[y]));
 
         }
