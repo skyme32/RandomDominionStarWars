@@ -3,4 +3,7 @@
     <item name="colorPrimary" type="color">#393d60</item>
     <item name="colorPrimaryDark" type="color">#2d3158</item>
     <item name="colorAccent" type="color">#383b59</item>
+    <item name="active" type="color">#ffffff</item>
+    <item name="inActive" type="color">#c7c6c6</item>
+    <item name="green" type="color">#009900</item>
 </resources>

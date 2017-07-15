@@ -43,7 +43,7 @@ public class SplahActivity extends ActionBarActivity {
             }
 
             // Start main activity
-            Intent intent = new Intent(SplahActivity.this, PrincipalActivity.class);
+            Intent intent = new Intent(SplahActivity.this, PrincipalTab.class);
             SplahActivity.this.startActivity(intent);
             SplahActivity.this.finish();
         }

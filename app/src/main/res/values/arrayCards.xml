@@ -18,11 +18,10 @@
         <item>Jabba the Hutt</item>
         <item>Speeder</item>
     </string-array>
-
     <string-array name="image">
         <item>batalla_espacial</item>
         <item>batalla_terrestre</item>
-        <item>bosque_endor</item>v
+        <item>bosque_endor</item>
         <item>ewoks</item>
         <item>escuadron_rojo</item>
         <item>moff_tarkin</item>
@@ -37,7 +36,26 @@
         <item>jabba_hutt</item>
         <item>speeder</item>
     </string-array>
-
+    <!--
+    <string-array name="image">
+        <item>http://lh5.ggpht.com/_hepKlJWopDg/TB-_WXikaYI/AAAAAAAAElI/715k4NvBM4w/s144-c/IMG_0075.JPG</item>
+        <item>http://lh4.ggpht.com/_4f1e_yo-zMQ/TCe5h9yN-TI/AAAAAAAAXqs/8X2fIjtKjmw/s144-c/IMG_1786.JPG</item>
+        <item>http://lh5.ggpht.com/_hepKlJWopDg/TB-_WXikaYI/AAAAAAAAElI/715k4NvBM4w/s144-c/IMG_0075.JPG</item>
+        <item>http://lh4.ggpht.com/_4f1e_yo-zMQ/TCe5h9yN-TI/AAAAAAAAXqs/8X2fIjtKjmw/s144-c/IMG_1786.JPG</item>
+        <item>http://lh3.ggpht.com/_GEnSvSHk4iE/TDSfmyCfn0I/AAAAAAAAF8Y/cqmhEoxbwys/s144-c/_MG_3675.jpg</item>
+        <item>http://lh6.ggpht.com/_ZN5zQnkI67I/TCFFZaJHDnI/AAAAAAAABVk/YoUbDQHJRdo/s144-c/P9250508.JPG</item>
+        <item>http://lh4.ggpht.com/_XjNwVI0kmW8/TCOwNtzGheI/AAAAAAAAC84/SxFJhG7Scgo/s144-c/0014.jpg</item>
+        <item>http://lh6.ggpht.com/_Nsxc889y6hY/TBp7jfx-cgI/AAAAAAAAHAg/Rr7jX44r2Gc/s144-c/IMGP9775a.jpg</item>
+        <item>http://lh6.ggpht.com/_ZN5zQnkI67I/TCFFZaJHDnI/AAAAAAAABVk/YoUbDQHJRdo/s144-c/P9250508.JPG</item>
+        <item>http://lh5.ggpht.com/_hepKlJWopDg/TB-_WXikaYI/AAAAAAAAElI/715k4NvBM4w/s144-c/IMG_0075.JPG</item>
+        <item>http://lh4.ggpht.com/_4f1e_yo-zMQ/TCe5h9yN-TI/AAAAAAAAXqs/8X2fIjtKjmw/s144-c/IMG_1786.JPG</item>
+        <item>http://lh3.ggpht.com/_GEnSvSHk4iE/TDSfmyCfn0I/AAAAAAAAF8Y/cqmhEoxbwys/s144-c/_MG_3675.jpg</item>
+        <item>http://lh6.ggpht.com/_ZN5zQnkI67I/TCFFZaJHDnI/AAAAAAAABVk/YoUbDQHJRdo/s144-c/P9250508.JPG</item>
+        <item>http://lh4.ggpht.com/_XjNwVI0kmW8/TCOwNtzGheI/AAAAAAAAC84/SxFJhG7Scgo/s144-c/0014.jpg</item>
+        <item>http://lh6.ggpht.com/_Nsxc889y6hY/TBp7jfx-cgI/AAAAAAAAHAg/Rr7jX44r2Gc/s144-c/IMGP9775a.jpg</item>
+        <item>http://lh6.ggpht.com/_ZN5zQnkI67I/TCFFZaJHDnI/AAAAAAAABVk/YoUbDQHJRdo/s144-c/P9250508.JPG</item>
+    </string-array>
+    -->
     <string-array name="desc">
         <item>+1 Carta\n+1 Acción\n+1 Compra\n+1 Credito</item>
         <item>+2 Acciones\n+1 Compra\n+2 Creditos</item>
@@ -56,7 +74,6 @@
         <item>+1 Carta\n+1 Acción\nCada jugador (incluido tú) revela la carta superior de su mazo y tú decides si la descarta o la devuelve a su sitio.</item>
         <item>+1 Acción\nDescarta las cartas que quieras. Roba una Carta por cada carta descartada.</item>
     </string-array>
-
     <string-array name="cost">
         <item>5</item>
         <item>5</item>
@@ -92,5 +109,16 @@
         <item>Basico</item>
         <item>Basico</item>
         <item>Basico</item>
+    </string-array>
+    <string-array name="num_cards">
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
     </string-array>
 </resources>

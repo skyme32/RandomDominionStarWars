@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Prefencias de las cartas">
+        <ListPreference
+            android:dialogTitle="@string/dialog_num_cards"
+            android:entries="@array/num_cards"
+            android:entryValues="@array/num_cards"
+            android:key="ncartas"
+            android:summary="@string/button_randomList"
+            android:title="@string/title_num_cards" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Elegir Categoria">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="category_1"
+            android:title="Basico" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ccategory_2"
+            android:title="Intriga" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="category_3"
+            android:title="Terramar" />
+    </PreferenceCategory>
+</PreferenceScreen>
